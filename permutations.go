@@ -24,12 +24,8 @@ func NextKPermutation(data sort.Interface, k int) bool {
 	// find j in (k…n-1) where a[j] > a[edge]
 	j = k
 
-	for {
-		if (j < n) && (data.Less(j, edge)) {
-			j++
-		} else {
-			break
-		}
+	for (j < n) && (data.Less(j, edge)) {
+		j++
 	}
 
 	if j < n {
@@ -44,12 +40,8 @@ func NextKPermutation(data sort.Interface, k int) bool {
 
 		// find rightmost ascent to left of edge
 		i = edge - 1
-		for {
-			if i >= 0 && data.Less(i+1, i) {
-				i--
-			} else {
-				break
-			}
+		for i >= 0 && data.Less(i+1, i) {
+			i--
 		}
 
 		if i < 0 {
@@ -58,12 +50,8 @@ func NextKPermutation(data sort.Interface, k int) bool {
 
 		// find j in (n-1…i+1) where aj > ai
 		j = n - 1
-		for {
-			if j > i && data.Less(j, i) {
-				j--
-			} else {
-				break
-			}
+		for j > i && data.Less(j, i) {
+			j--
 		}
 		// swap a[i], a[j]
 		data.Swap(i, j)

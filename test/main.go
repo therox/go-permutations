@@ -34,21 +34,13 @@ func main() {
 	counter := 1
 	permutations.NewPermutation(a)
 	for {
-		fmt.Println(counter, ": ", a[:3])
+		fmt.Println(counter, ": ", a[:4])
 		counter++
-		if !permutations.NextKPermutation(a, 3) {
+		if !permutations.NextKPermutation(a, 4) {
 			break
 		}
 	}
-	counter = 1
-	permutations.NewPermutation(a)
-	for {
-		fmt.Println(counter, ": ", a)
-		counter++
-		if !permutations.NextPermutation(a) {
-			break
-		}
-	}
+
 }
 
 func (is testStructSlice) Len() int {
