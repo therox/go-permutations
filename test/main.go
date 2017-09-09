@@ -19,6 +19,9 @@ func main() {
 			3, "Player 3",
 		},
 		testStruct{
+			5, "Player 5",
+		},
+		testStruct{
 			2, "Player 2",
 		},
 		testStruct{
@@ -29,11 +32,20 @@ func main() {
 		},
 	}
 	counter := 1
-	permutations.NewKPermutation(a)
+	permutations.NewPermutation(a)
 	for {
 		fmt.Println(counter, ": ", a[:3])
 		counter++
 		if !permutations.NextKPermutation(a, 3) {
+			break
+		}
+	}
+	counter = 1
+	permutations.NewPermutation(a)
+	for {
+		fmt.Println(counter, ": ", a)
+		counter++
+		if !permutations.NextPermutation(a) {
 			break
 		}
 	}

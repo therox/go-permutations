@@ -5,8 +5,13 @@ import (
 )
 
 // NewKPermutation generates initial permutation
-func NewKPermutation(data sort.Interface) {
+func NewPermutation(data sort.Interface) {
 	sort.Sort(data)
+}
+
+// NextPermutation generate next permutation
+func NextPermutation(data sort.Interface) bool {
+	return NextKPermutation(data, data.Len())
 }
 
 // NextKPermutation generate next permutation
